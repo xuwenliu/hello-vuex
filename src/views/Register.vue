@@ -42,7 +42,7 @@
 </template>
 <script>
 import { mapActions, mapState } from 'vuex';
-import { USER_REGISTER, USER_LOGIN } from '@/vuex/mutation-types';
+import { USER_REGISTER, USER_LOGIN,RESET_USER } from '@/vuex/mutation-types';
 	export default {
 		data() {
 			return {
@@ -59,19 +59,21 @@ import { USER_REGISTER, USER_LOGIN } from '@/vuex/mutation-types';
             async submit(type){
                 // type 1=注册 2=登录
                 if(this.userNameChange() && this.passwordChange()){
-                    console.log(this.form)
                     if(this.form.userName === this.form.password){
                         this.$toast.warning('用户名和密码不能相同');
                         return ;
                     }
-                    if(type ===1 ){
-				        let result = await this.$store.dispatch(`user/${USER_REGISTER}`, this.form);
-
-
+                    let str = type ===1 ?USER_REGISTER:USER_LOGIN;
+                    let result = await this.$store.dispatch(`user/${str}`, this.form);
+                    if(result.data.success){
+                        this.$toast.success(`${type ===1?'注册成功!':'登录成功!'}`);
+                        this.reset();
+                        this.$router.push({name:'index'});
                     }else {
-				        let result = await this.$store.dispatch(`user/${USER_LOGIN}`, this.form);
-
+                        this.$toast.error(result.data.msg);
                     }
+
+                    
                 }
             },
             userNameChange(){
@@ -93,7 +95,12 @@ import { USER_REGISTER, USER_LOGIN } from '@/vuex/mutation-types';
                     this.passwordError = '';
                     return true;
                 }
-            }
+            },
+            //重置
+			reset() {
+				this.$refs.form.clear();
+				this.$store.commit(`user/${RESET_USER}`);
+			}
         }
 	};
 </script>

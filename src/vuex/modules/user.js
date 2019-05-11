@@ -1,4 +1,4 @@
-import { USER_REGISTER,USER_LOGIN } from "@/vuex/mutation-types";
+import { USER_REGISTER,USER_LOGIN,RESET_USER } from "@/vuex/mutation-types";
 
 import axios from "@/axios/axios";
 import api from "@/axios/api";
@@ -11,12 +11,20 @@ const user = {
             password: '',
         }
     },
+    mutations: {
+        [RESET_USER](state) {
+            state.form = {
+                userName: '',
+                password: '',
+            }
+        }
+    },
     actions: {
         async [USER_REGISTER](ctx, data) {
             let result = await axios.post(api.user.register, data);
             return result;
         },
-        
+
         async [USER_LOGIN](ctx, data) {
             let result = await axios.post(api.user.login, data);
             return result;
