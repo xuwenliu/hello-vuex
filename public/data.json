@@ -1,0 +1,130 @@
+{
+    "phoneList": [
+        {
+            "id": 1,
+            "name": "iphone",
+            "types": [
+                {
+                    "id": 1,
+                    "name": "iphone4"
+                },
+                {
+                    "id": 2,
+                    "name": "iphone5"
+                },
+                {
+                    "id": 3,
+                    "name": "iphone6"
+                },
+                {
+                    "id": 4,
+                    "name": "iphone8"
+                },
+                {
+                    "id": 5,
+                    "name": "iphoneX"
+                },
+                {
+                    "id": 6,
+                    "name": "iphoneXS"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "华为",
+            "types": [
+                {
+                    "id": 1,
+                    "brandId":2,
+                    "name": "P20"
+                },
+                {
+                    "id": 2,
+                    "brandId":2,
+                    "name": "P20 Pro"
+                },
+                {
+                    "id": 3,
+                    "brandId":2,
+                    "name": "P30"
+                },
+                {
+                    "id": 4,
+                    "brandId":2,
+                    "name": "P30 Pro"
+                },
+                {
+                    "id": 5,
+                    "brandId":2,
+                    "name": "nova 4"
+                },
+                {
+                    "id": 6,
+                    "brandId":2,
+                    "name": "nova 4e"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "oppo",
+            "types": [
+                {
+                    "id": 1,
+                    "name": "R7"
+                },
+                {
+                    "id": 2,
+                    "name": "R9"
+                },
+                {
+                    "id": 3,
+                    "name": "R11"
+                },
+                {
+                    "id": 4,
+                    "name": "R13"
+                },
+                {
+                    "id": 5,
+                    "name": "R15"
+                },
+                {
+                    "id": 6,
+                    "name": "R17"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "vivo",
+            "types": [
+                {
+                    "id": 1,
+                    "name": "v15"
+                },
+                {
+                    "id": 2,
+                    "name": "V15 Pro"
+                },
+                {
+                    "id": 3,
+                    "name": "Y91"
+                },
+                {
+                    "id": 4,
+                    "name": "Y91 C"
+                },
+                {
+                    "id": 5,
+                    "name": "Y95"
+                },
+                {
+                    "id": 6,
+                    "name": "V11"
+                }
+            ]
+        }
+    ]
+}
