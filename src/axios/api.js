@@ -9,5 +9,9 @@ const api = {
         update: '/phone/update', //修改提交 _id ...
         
     },
+    user: {
+        register: '/user/register',
+        login: '/user/login',
+    }
 }
 export default api;

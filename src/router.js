@@ -6,8 +6,21 @@ export default new Router({
     routes: [{
             path: "/",
             redirect: {
-                name: "phoneList"
+                name: "index"
             }
+        },
+
+        {
+            path: '/index',
+            name: "index",
+            component: () =>
+                import( /* webpackChunkName: "index" */ "@/views/Index.vue")
+        },
+        {
+            path: '/register',
+            name: "register",
+            component: () =>
+                import( /* webpackChunkName: "register" */ "@/views/Register.vue")
         },
         {
             path: '/phone',

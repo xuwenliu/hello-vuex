@@ -7,3 +7,11 @@ export const DELETE_PHONE = "delete_phone";
 export const SET_TITLE = "set_title";
 export const GET_PHONE_INFO = "get_phone_info";
 export const UPDATE_PHONE = "update_phone";
+
+
+export const USER_REGISTER = "register";
+export const USER_LOGIN = "login";
+
+
+
+

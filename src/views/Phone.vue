@@ -11,7 +11,7 @@
 		</mu-appbar>
 		<mu-sub-header>{{subTitle}}</mu-sub-header>
 
-		<mu-form :model="form" ref="form" class="mu-demo-form" label-position="right" label-width="100">
+		<mu-form :model="form" ref="form" label-position="right" label-width="100">
 			<mu-form-item prop="brandId" label="手机品牌" :rules="brandRules">
 				<mu-select v-model="form.brandId" @change="chooseBrand">
 					<mu-option
