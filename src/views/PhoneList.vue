@@ -48,7 +48,10 @@
 		
 		},
 		mounted() {
-			this.getList();
+			this.getList({
+                page:1,
+                pageSize:10
+            });
 		},
 		methods: {
 

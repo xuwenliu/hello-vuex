@@ -97,8 +97,10 @@ const phone = {
         },
 
         //获取手机列表
-        async [GET_PHONE_LIST]({ commit }) {
-            let result = await axios.get(api.phone.list);
+        async [GET_PHONE_LIST]({ commit },data) {
+            let result = await axios.get(api.phone.list, {
+                params:data
+            });
             if (result.data.success) {
                 commit(GET_PHONE_LIST, result.data.data);
             }
