@@ -13,7 +13,8 @@
 			<mu-list-item
 				button
 				:ripple="false"
-				v-for="item,index in newList"
+                v-for="item,index in newList"
+                :key="index"
 				v-if="newList && newList.length>0"
 			>
 				<mu-list-item-action>

@@ -12,6 +12,9 @@ export const UPDATE_PHONE = "update_phone";
 export const USER_REGISTER = "register";
 export const USER_LOGIN = "login";
 export const RESET_USER = "reset_user";
+export const USER_LOGOUT = "logout";
+
+
 
 
 

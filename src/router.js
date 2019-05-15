@@ -17,10 +17,10 @@ export default new Router({
                 import( /* webpackChunkName: "index" */ "@/views/Index.vue")
         },
         {
-            path: '/register',
-            name: "register",
+            path: '/user',
+            name: "user",
             component: () =>
-                import( /* webpackChunkName: "register" */ "@/views/Register.vue")
+                import( /* webpackChunkName: "user" */ "@/views/User.vue")
         },
         {
             path: '/phone',
