@@ -24,7 +24,10 @@ const phone = {
         },
         phoneOptions: [], //手机品牌
         types: [], //手机型号
-        list: [] //添加的手机列表
+        list: [], //添加的手机列表
+        page: 1,
+        pageSize: 15,
+        totalCount: 0,
     },
     getters: {
         newList: state => {
@@ -56,8 +59,13 @@ const phone = {
         },
 
         //获取手机列表
-        [GET_PHONE_LIST](state, data) {
-            state.list = data;
+        [GET_PHONE_LIST](state, result) {
+            if (state.page === 1) {
+                state.list = result.data;
+            } else {
+                state.list = state.list.concat(result.data);
+            }
+            state.totalCount = result.totalCount;
         },
 
         //重置添加数据
@@ -97,12 +105,13 @@ const phone = {
         },
 
         //获取手机列表
-        async [GET_PHONE_LIST]({ commit },data) {
+        async [GET_PHONE_LIST]({ commit }, data) {
+            
             let result = await axios.get(api.phone.list, {
                 params:data
             });
             if (result.data.success) {
-                commit(GET_PHONE_LIST, result.data.data);
+                commit(GET_PHONE_LIST, result.data);
             }
         },
 
